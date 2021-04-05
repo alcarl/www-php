@@ -2,7 +2,7 @@
 
 $settings = [
 	'settings' => [
-		'displayErrorDetails' => false,
+		'displayErrorDetails' => true,
 		'renderer' => [
 			'template_path' => ROOT . '/views/',
 		],

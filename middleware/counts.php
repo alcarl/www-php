@@ -4,7 +4,7 @@ $app->add(function ($request, $response, $next) {
 
     timer('start counts');
 
-    try{
+//    try{
         $counts = file_get_contents('counts.txt');
         $this->view->count = explode('|', $counts)[0];
         $time = explode('|', $counts)[1];
@@ -14,9 +14,9 @@ $app->add(function ($request, $response, $next) {
             $this->view->count = $count;
             file_put_contents('counts.txt', $count . '|' . time());
         }
-    }catch(Exception $error){
-        exit('Doing some maintenance');
-    }
+//    }catch(Exception $error){
+//        exit('Doing some maintenance:'.$error->getMessage());
+//    }
 
     timer('end counts');
 

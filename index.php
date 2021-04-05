@@ -1,5 +1,5 @@
 <?php
-
+ini_set("error_reporting", E_ALL & ~E_DEPRECATED); 
 $start = microtime(true);
 $last = microtime(true);
 $timerLogs = "\n";
@@ -22,16 +22,16 @@ define('ROOT', __DIR__);
 define('INVITE_ONLY', false);
 define('REQUEST_LOGIN', true);
 
-define('DBNAME', 'databasename');
-define('DBUSER', 'databaseuser');
-define('DBPASS', 'databasepass');
+define('DBNAME', 'dht');
+define('DBUSER', 'dht');
+define('DBPASS', 'dht');
 
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/lib/rb.php';
 
 timer('autoload done');
 
-R::setup('mysql:host=localhost;dbname='.DBNAME, DBUSER, DBPASS);
+R::setup('mysql:host=127.0.0.1;dbname='.DBNAME, DBUSER, DBPASS);
 
 timer('db connection init done');
 
